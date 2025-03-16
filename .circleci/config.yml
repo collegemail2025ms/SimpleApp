@@ -10,20 +10,20 @@ workflows:
               only:
                 - main  
 
-jobs:
+jjobs:
   build:
-    working_directory: ~/SimpleApp
+    working_directory: ~\SimpleApp
     docker:
       - image: circleci/node:10.16.3
     steps:
       - checkout
       - run:
-          name: Update npm
-          command: npm install -g npm@latest
+          name: update-npm
+          command: 'sudo npm install -g npm@5'
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: Install Dependencies
+          name: install-npm-wee
           command: npm install
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
