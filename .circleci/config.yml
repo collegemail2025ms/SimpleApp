@@ -10,7 +10,7 @@ workflows:
               only:
                 - main  
 
-jjobs:
+jobs:
   build:
     working_directory: ~\SimpleApp
     docker:
